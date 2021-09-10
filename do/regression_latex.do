@@ -29,5 +29,5 @@ outreg2 using regression-table.tex, replace cttop(full)
 // list files in current directory
 pwd
 ls
-	
+
 exit, clear

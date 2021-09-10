@@ -7,7 +7,7 @@ inputs:
     description: 'Stata licence string (content of your `stata.lic` file)'
   stata-edition:
     required: true
-    description: 'Your Stata edition. Choices: stata, stata-se, stata-mp)'
+    description: 'Your Stata edition. (Choices: stata, stata-se, stata-mp)'
     default: 'stata'
 runs:
   using: 'docker'
