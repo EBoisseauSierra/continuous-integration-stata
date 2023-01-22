@@ -23,4 +23,4 @@ find results/ -type f `# list all artefacts…` \
     -exec sha512sum {} \; `# … and compute their SHA-512 sum: https://askubuntu.com/a/1091369`\
     | sed 's/  /,/' `# replace the double-space separator between sha and filename with a comma`\
     | cat <(echo "sha512,file_name") - `# prefix the git note on the fly, as appending creates new line https://stackoverflow.com/a/58287466/5433628 + https://stackoverflow.com/a/33139133/5433628`\
-    | git notes add --allow-empty -F -
+    | git -c "user.name=Github Actions" -c "user.email=bot@github.actions" notes add --allow-empty -F -
