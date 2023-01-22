@@ -3,7 +3,7 @@
 # populate licence file
 echo -n "$1" > /usr/local/stata/stata.lic
 
-$2 -b do main "all"
+$2 -b do main
 
 # print log result
 cat main.log
