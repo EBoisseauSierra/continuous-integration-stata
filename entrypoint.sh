@@ -16,7 +16,10 @@ if [[ ${EXIT_CODE:0:1} == "r" ]]; then
 fi
 
 # Source: how to comment on multi-line commands https://stackoverflow.com/a/12797512/5433628
-find results/ -type f -exec sha512sum {} \; | sed 's/  /,/' | cat <(echo "sha512,file_name") - >> $GITHUB_OUTPUT
+echo "ARTEFACTS_SUMMARY<<EOF" >> $GITHUB_OUTPUT
+find results/ -type f -exec sha512sum {} \; | sed 's/  /,/' | cat <(echo 'sha512,file_name') - >> $GITHUB_OUTPUT
+echo "EOF" >> $GITHUB_OUTPUT
+
 
 # # Add the list of artefacts and their SHA512 sum as a 'git notes' to HEAD
 # git notes remove --ignore-missing #  Clear note if already existing
